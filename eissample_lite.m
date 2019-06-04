@@ -822,8 +822,8 @@ moved = 0;
 
 % Keep points fixed along fixed dimensions
 fixed_dim = LB == UB;
-if any(fixed_dim) && any(any(bsxfun(@gt,x0(:,fixed_dim),LB(fixed_dim)))) || ...
-    any(any(bsxfun(@lt,x0(:,fixed_dim),LB(fixed_dim))))
+if any(fixed_dim) && (any(any(bsxfun(@gt,x0(:,fixed_dim),LB(fixed_dim)))) || ...
+    any(any(bsxfun(@lt,x0(:,fixed_dim),LB(fixed_dim)))))
         moved = 1;            
         x0(:,fixed_dim) = LB(fixed_dim); 
 end
